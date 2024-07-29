@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-07-28T13:27:18Z" name="Default suite" finished-at="2024-07-28T13:27:35Z" duration-ms="17952">
+    <groups>
+    </groups>
+    <test started-at="2024-07-28T13:27:18Z" name="Default test" finished-at="2024-07-28T13:27:35Z" duration-ms="17952">
+      <class name="automationframework.ATB6XWeb.NegativeTC">
+        <test-method signature="invalidLogin()[pri:0, instance:automationframework.ATB6XWeb.NegativeTC@b78a709]" started-at="2024-07-28T13:27:18Z" name="invalidLogin" finished-at="2024-07-28T13:27:35Z" duration-ms="17743" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidLogin -->
+      </class> <!-- automationframework.ATB6XWeb.NegativeTC -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
