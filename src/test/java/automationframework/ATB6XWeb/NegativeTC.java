@@ -1,34 +1,30 @@
 package automationframework.ATB6XWeb;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import baseTestPackage.BaseTest;
+import driver.DriverManager;
 import pageObjects.LoginPageObjects;
+import utils.PropertyReader;
 
-public class NegativeTC {
+public class NegativeTC extends BaseTest {
 
 	LoginPageObjects loginpage;
 
 	@Test
-	public void invalidLogin() {
+	public void invalidLogin() throws IOException {
 
-		WebDriver driver = new EdgeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://app.vwo.com/#/login");
-		loginpage = new LoginPageObjects(driver);
-		loginpage.loginWithInvalidCredenttials("hellobabai@gmail.com", "heybabu@123");
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		loginpage = new LoginPageObjects(DriverManager.driver);
+		loginpage.goToVMO();
+		loginpage.loginWithInvalidCredenttials(PropertyReader.readKey("invalid_username"),
+				PropertyReader.readKey("invalid_password"),loginpage.getErrorMessaage());
+		
 		String error_text = loginpage.getErrorMessaage();
-
-		Assert.assertEquals(error_text, "Your email, password, IP address or location did not match");
-		driver.quit();
+		
+		Assert.assertEquals(error_text, PropertyReader.readKey("error_message"));
 
 	}
 

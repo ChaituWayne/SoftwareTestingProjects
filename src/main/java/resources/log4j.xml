@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration staus="WARN">
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+		<PatternLayout pattern=""></PatternLayout>
+		</Console>
+	</Appenders>
+</Configuration>

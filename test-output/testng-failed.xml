@@ -6,6 +6,8 @@
       <class name="automationframework.ATB6XWeb.NegativeTC">
         <methods>
           <include name="invalidLogin"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- automationframework.ATB6XWeb.NegativeTC -->
     </classes>

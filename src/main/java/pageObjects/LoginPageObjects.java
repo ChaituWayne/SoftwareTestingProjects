@@ -3,7 +3,9 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPageObjects {
+import base.BasePage;
+
+public class LoginPageObjects extends BasePage {
 
 	WebDriver driver;
 
@@ -21,11 +23,12 @@ public class LoginPageObjects {
 	private By errorMessage = By.cssSelector("div[id='js-notification-box-msg']");
 
 	// Action Methods
-	public void loginWithInvalidCredenttials(String user, String pwd) {
+	public void loginWithInvalidCredenttials(String user, String pwd, String text) {
 
 		driver.findElement(username).sendKeys(user);
 		driver.findElement(password).sendKeys(pwd);
 		driver.findElement(signInButton).click();
+		waitForTextInElement(errorMessage, text);
 
 	}
 
