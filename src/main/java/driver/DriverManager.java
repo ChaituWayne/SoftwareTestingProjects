@@ -30,9 +30,15 @@ public class DriverManager {
 		return driver;
 	}
 
-	public static WebDriver invokeDriver() throws IOException {
+	public static WebDriver invokeDriver() {
 
-		String browser = PropertyReader.readKey("browser");
+		String browser=null;
+		try {
+			browser = PropertyReader.readKey("browser");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		switch (browser) {
 

@@ -23,12 +23,11 @@ public class LoginPageObjects extends BasePage {
 	private By errorMessage = By.cssSelector("div[id='js-notification-box-msg']");
 
 	// Action Methods
-	public void loginWithInvalidCredenttials(String user, String pwd, String text) {
+	public void loginWithInvalidCredenttials(String user, String pwd) {
 
 		driver.findElement(username).sendKeys(user);
 		driver.findElement(password).sendKeys(pwd);
 		driver.findElement(signInButton).click();
-		waitForTextInElement(errorMessage, text);
 
 	}
 

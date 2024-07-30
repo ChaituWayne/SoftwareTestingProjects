@@ -20,10 +20,17 @@ public class NegativeTC extends BaseTest {
 		loginpage = new LoginPageObjects(DriverManager.driver);
 		loginpage.goToVMO();
 		loginpage.loginWithInvalidCredenttials(PropertyReader.readKey("invalid_username"),
-				PropertyReader.readKey("invalid_password"),loginpage.getErrorMessaage());
-		
+				PropertyReader.readKey("invalid_password"));
+
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		String error_text = loginpage.getErrorMessaage();
-		
+
 		Assert.assertEquals(error_text, PropertyReader.readKey("error_message"));
 
 	}
